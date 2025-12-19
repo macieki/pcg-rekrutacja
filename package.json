@@ -7,13 +7,15 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "vercel-build": "nuxt build"
   },
   "dependencies": {
     "@nuxtjs/vuetify": "^1.12.3",
     "nuxt": "^2.17.3"
   },
   "devDependencies": {
-    "@mdi/font": "^7.4.47"
+    "@mdi/font": "^7.4.47",
+    "@nuxtjs/vercel-builder": "^0.24.0"
   }
 }
