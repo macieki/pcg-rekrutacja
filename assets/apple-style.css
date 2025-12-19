@@ -1,0 +1,652 @@
+/* Apple Design System — Unified Global Styles */
+
+:root {
+  /* Colors - Strict Apple Palette */
+  --apple-bg-primary: #FFFFFF;
+  --apple-bg-secondary: #F5F5F7;
+  --apple-border: #E5E5EA;
+  --apple-text-primary: #1C1C1E;
+  --apple-text-secondary: #6E6E73;
+  --apple-accent: #007AFF;
+  --apple-success: #34C759;
+  --apple-warning: #FF9500;
+  --apple-error: #FF3B30;
+  
+  /* Shadows - Soft only */
+  --apple-shadow-subtle: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --apple-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
+  
+  /* Radius - Consistent */
+  --apple-radius: 10px;
+  --apple-radius-sm: 8px;
+  --apple-radius-lg: 12px;
+  
+  /* Transitions */
+  --apple-transition: all 0.15s ease;
+}
+
+/* Global Typography */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+  color: var(--apple-text-primary);
+  background: var(--apple-bg-secondary);
+}
+
+.v-application {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  background: var(--apple-bg-secondary) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--apple-text-primary) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Card Styling - Minimal */
+.v-card {
+  border-radius: var(--apple-radius) !important;
+  box-shadow: var(--apple-shadow-subtle) !important;
+  transition: var(--apple-transition) !important;
+  border: none !important;
+  background: var(--apple-bg-primary) !important;
+}
+
+.v-card:hover {
+  box-shadow: var(--apple-shadow-hover) !important;
+}
+
+.v-card--flat {
+  box-shadow: none !important;
+}
+
+/* Remove colored card headers */
+.v-card__title {
+  background: transparent !important;
+  color: var(--apple-text-primary) !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  padding: 24px 24px 16px !important;
+}
+
+.v-card__text {
+  color: var(--apple-text-primary) !important;
+  padding: 16px 24px !important;
+}
+
+/* Button Styling - Apple Standard */
+.v-btn {
+  border-radius: var(--apple-radius-sm) !important;
+  text-transform: none !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  box-shadow: none !important;
+  transition: var(--apple-transition) !important;
+  font-size: 15px !important;
+}
+
+.v-btn--text {
+  background: transparent !important;
+}
+
+.v-btn--outlined {
+  border: 1px solid #D1D1D6 !important;
+  background: var(--apple-bg-primary) !important;
+}
+
+.v-btn.primary {
+  background: var(--apple-accent) !important;
+  color: white !important;
+}
+
+.v-btn.primary .v-icon {
+  color: white !important;
+}
+
+.v-btn.primary:hover {
+  background: #0051D5 !important;
+}
+
+.v-btn.secondary {
+  background: var(--apple-bg-primary) !important;
+  border: 1px solid #D1D1D6 !important;
+  color: var(--apple-text-primary) !important;
+}
+
+.v-btn.secondary:hover {
+  background: var(--apple-bg-secondary) !important;
+}
+
+/* Remove bright colors from buttons */
+.v-btn.success,
+.v-btn.error,
+.v-btn.warning,
+.v-btn.info {
+  background: var(--apple-accent) !important;
+  color: white !important;
+}
+
+.v-btn.success .v-icon,
+.v-btn.error .v-icon,
+.v-btn.warning .v-icon,
+.v-btn.info .v-icon {
+  color: white !important;
+}
+
+/* Vuetify v-btn with color attribute */
+.v-btn.primary--text .v-icon {
+  color: var(--apple-accent) !important;
+}
+
+/* Dark variant ensures white text and icons */
+.v-btn.theme--dark .v-icon,
+.v-btn[dark] .v-icon {
+  color: white !important;
+}
+
+/* Chips - Minimal */
+.v-chip {
+  border-radius: 12px !important;
+  background: #E5E5EA !important;
+  color: var(--apple-text-primary) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  height: auto !important;
+  padding: 4px 12px !important;
+}
+
+.v-chip.v-chip--outlined {
+  background: transparent !important;
+  border: 1px solid #D1D1D6 !important;
+}
+
+/* Chips inside primary/colored elements should have white text */
+.primary .v-chip__content,
+.v-chip.primary .v-chip__content,
+.success .v-chip__content,
+.v-chip.success .v-chip__content,
+.error .v-chip__content,
+.v-chip.error .v-chip__content,
+.warning .v-chip__content,
+.v-chip.warning .v-chip__content,
+.info .v-chip__content,
+.v-chip.info .v-chip__content {
+  color: white !important;
+}
+
+/* Alerts - Subtle */
+.v-alert {
+  border-radius: var(--apple-radius) !important;
+  border: 1px solid var(--apple-border) !important;
+  box-shadow: none !important;
+}
+
+.v-alert.success {
+  background: rgba(52, 199, 89, 0.1) !important;
+  border-color: rgba(52, 199, 89, 0.3) !important;
+  color: var(--apple-text-primary) !important;
+}
+
+.v-alert.error {
+  background: rgba(255, 59, 48, 0.1) !important;
+  border-color: rgba(255, 59, 48, 0.3) !important;
+  color: var(--apple-text-primary) !important;
+}
+
+.v-alert.warning {
+  background: rgba(255, 149, 0, 0.1) !important;
+  border-color: rgba(255, 149, 0, 0.3) !important;
+  color: var(--apple-text-primary) !important;
+}
+
+.v-alert.info {
+  background: rgba(0, 122, 255, 0.1) !important;
+  border-color: rgba(0, 122, 255, 0.3) !important;
+  color: var(--apple-text-primary) !important;
+}
+
+/* Text Fields */
+.v-text-field {
+  border-radius: var(--apple-radius-sm) !important;
+}
+
+.v-text-field .v-input__slot {
+  background: var(--apple-bg-secondary) !important;
+  border: 1px solid var(--apple-border) !important;
+  box-shadow: none !important;
+}
+
+.v-text-field--outlined .v-input__slot {
+  border: 1px solid var(--apple-border) !important;
+}
+
+/* Remove colored backgrounds from sections */
+.v-card.primary, 
+.v-sheet.primary,
+.v-card.secondary, 
+.v-sheet.secondary, 
+.v-card.accent, 
+.v-sheet.accent, 
+.v-card.success, 
+.v-sheet.success, 
+.v-card.error, 
+.v-sheet.error, 
+.v-card.warning, 
+.v-sheet.warning, 
+.v-card.info, 
+.v-sheet.info {
+  background: var(--apple-bg-primary) !important;
+}
+
+/* Dividers */
+.v-divider {
+  border-color: var(--apple-border) !important;
+}
+
+/* Lists */
+.v-list {
+  background: var(--apple-bg-primary) !important;
+}
+
+.v-list-item {
+  color: var(--apple-text-primary) !important;
+}
+
+.v-list-item:hover {
+  background: var(--apple-bg-secondary) !important;
+}
+
+/* Icons - Monochrome */
+.v-icon {
+  color: var(--apple-text-secondary) !important;
+}
+
+/* Icons inside primary/colored elements should be white */
+.primary .v-icon,
+.v-btn.primary .v-icon,
+.primary-btn-large .v-icon,
+.primary-btn-block .v-icon,
+.primary-cta .v-icon,
+.success .v-icon,
+.v-btn.success .v-icon,
+.error .v-icon,
+.v-btn.error .v-icon,
+.warning .v-icon,
+.v-btn.warning .v-icon,
+.info .v-icon,
+.v-btn.info .v-icon,
+.green .v-icon,
+.v-btn.green .v-icon {
+  color: white !important;
+}
+
+/* All text and elements inside .green parent should be white */
+.green,
+.green *,
+.v-btn.green,
+.v-btn.green *,
+.v-chip.green,
+.v-chip.green *,
+.v-card.green,
+.v-card.green * {
+  color: white !important;
+}
+
+/* All text and elements inside .blue parent should be white */
+.blue,
+.blue *,
+.v-btn.blue,
+.v-btn.blue *,
+.v-chip.blue,
+.v-chip.blue *,
+.v-card.blue,
+.v-card.blue * {
+  color: white !important;
+}
+
+.v-icon.primary--text {
+  color: var(--apple-accent) !important;
+}
+
+/* Progress bars */
+.v-progress-linear {
+  border-radius: 4px !important;
+  background: #E5E5EA !important;
+}
+
+.v-progress-linear__bar {
+  background: var(--apple-accent) !important;
+}
+
+/* Badges */
+.v-badge__badge {
+  border-radius: 10px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  padding: 2px 6px !important;
+}
+
+/* Menus & Dropdowns */
+.v-menu__content {
+  border-radius: var(--apple-radius) !important;
+  box-shadow: var(--apple-shadow-hover) !important;
+  border: 1px solid var(--apple-border) !important;
+  background: var(--apple-bg-primary) !important;
+}
+
+/* Navigation */
+.v-app-bar {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid var(--apple-border) !important;
+  box-shadow: none !important;
+}
+
+/* Tabs */
+.v-tabs {
+  background: transparent !important;
+}
+
+.v-tab {
+  text-transform: none !important;
+  font-weight: 500 !important;
+  color: var(--apple-text-secondary) !important;
+  letter-spacing: -0.01em !important;
+}
+
+.v-tab--active {
+  color: var(--apple-accent) !important;
+}
+
+/* Remove ALL bright colored backgrounds */
+.blue, .indigo, .purple, .pink, .red, .orange, .yellow, .green, .teal, .cyan {
+  background: var(--apple-bg-primary) !important;
+  color: var(--apple-text-primary) !important;
+}
+
+/* White text on colored backgrounds - convert to dark text */
+.white--text {
+  color: var(--apple-text-primary) !important;
+}
+
+/* Ensure no element has bright background - only Vuetify elements */
+.v-sheet.primary,
+.v-sheet.secondary,
+.v-sheet.accent,
+.v-sheet.success,
+.v-sheet.error,
+.v-sheet.warning,
+.v-sheet.info,
+.v-card.primary,
+.v-card.secondary,
+.v-card.accent,
+.v-card.success,
+.v-card.error,
+.v-card.warning,
+.v-card.info {
+  background: var(--apple-bg-primary) !important;
+}
+
+.v-btn:not(.v-btn--text):not(.v-btn--outlined):not(.primary-btn):not(.secondary-btn):not(.icon-btn) {
+  box-shadow: none !important;
+}
+
+.v-btn:hover:not(.primary-btn):not(.secondary-btn):not(.icon-btn) {
+  transform: none;
+  box-shadow: none !important;
+}
+
+.v-btn--x-large {
+  border-radius: 12px !important;
+  padding: 0 32px !important;
+  height: 52px !important;
+  font-size: 17px !important;
+}
+
+.v-btn--large {
+  border-radius: 11px !important;
+  font-size: 16px !important;
+}
+
+/* Input Fields */
+.v-text-field .v-input__control {
+  border-radius: 10px !important;
+}
+
+.v-text-field--outlined fieldset {
+  border-radius: 10px !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+.v-text-field--outlined:hover fieldset {
+  border-color: rgba(0, 122, 255, 0.5) !important;
+}
+
+.v-text-field--outlined.v-input--is-focused fieldset {
+  border-color: #007AFF !important;
+  border-width: 2px !important;
+}
+
+/* Select and Autocomplete */
+.v-select .v-input__control,
+.v-autocomplete .v-input__control {
+  border-radius: 10px !important;
+}
+
+/* Chips */
+.v-chip {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  letter-spacing: -0.01em !important;
+}
+
+.v-chip.v-chip--outlined {
+  border-width: 1.5px !important;
+}
+
+/* Progress Linear */
+.v-progress-linear {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+
+.v-progress-linear__background {
+  opacity: 0.15 !important;
+}
+
+/* App Bar */
+.v-app-bar {
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+  backdrop-filter: blur(20px) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+}
+
+.v-app-bar.primary {
+  background: rgba(0, 122, 255, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+/* Navigation Drawer */
+.v-navigation-drawer {
+  border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: none !important;
+}
+
+/* List Items */
+.v-list-item {
+  border-radius: 8px !important;
+  margin: 2px 8px !important;
+  transition: var(--apple-transition) !important;
+}
+
+.v-list-item:hover {
+  background: rgba(0, 122, 255, 0.08) !important;
+}
+
+.v-list-item--active {
+  background: rgba(0, 122, 255, 0.12) !important;
+  color: #007AFF !important;
+}
+
+.v-list-item--active::before {
+  opacity: 0 !important;
+}
+
+/* Alerts */
+.v-alert {
+  border-radius: var(--apple-radius) !important;
+  border-left: 4px solid currentColor !important;
+  box-shadow: var(--apple-shadow-sm) !important;
+}
+
+/* Dialogs */
+.v-dialog {
+  border-radius: var(--apple-radius-lg) !important;
+  box-shadow: var(--apple-shadow-lg) !important;
+}
+
+/* Snackbar */
+.v-snack__wrapper {
+  border-radius: var(--apple-radius) !important;
+  box-shadow: var(--apple-shadow-lg) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+/* Data Table */
+.v-data-table {
+  border-radius: var(--apple-radius) !important;
+}
+
+.v-data-table > .v-data-table__wrapper > table > thead > tr > th {
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: -0.01em !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.v-data-table > .v-data-table__wrapper > table > tbody > tr:hover {
+  background: rgba(0, 122, 255, 0.04) !important;
+}
+
+/* Stepper */
+.v-stepper {
+  border-radius: var(--apple-radius) !important;
+  box-shadow: var(--apple-shadow-md) !important;
+}
+
+.v-stepper__step {
+  transition: var(--apple-transition) !important;
+}
+
+/* Tabs */
+.v-tabs {
+  border-radius: var(--apple-radius) !important;
+}
+
+.v-tab {
+  text-transform: none !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  border-radius: 8px !important;
+  transition: var(--apple-transition) !important;
+}
+
+.v-tab--active {
+  background: rgba(0, 122, 255, 0.1) !important;
+}
+
+/* Menu */
+.v-menu__content {
+  border-radius: var(--apple-radius) !important;
+  box-shadow: var(--apple-shadow-lg) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Expansion Panels */
+.v-expansion-panel {
+  border-radius: var(--apple-radius) !important;
+  margin-bottom: 12px !important;
+  box-shadow: var(--apple-shadow-sm) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.v-expansion-panel::before {
+  box-shadow: none !important;
+}
+
+/* Avatar */
+.v-avatar {
+  border-radius: 50% !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Badge */
+.v-badge__badge {
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+}
+
+/* Smooth Scrolling */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Container Spacing */
+.v-container {
+  max-width: 1280px !important;
+}
+
+/* Headings */
+.display-1, .display-2, .display-3, .display-4 {
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.headline {
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+}
+
+.title {
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Subtle animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Glass morphism effect for special cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Focus styles */
+.v-input--is-focused .v-input__slot {
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15) !important;
+}
+
+/* Disabled state */
+.v-btn--disabled {
+  opacity: 0.4 !important;
+}
