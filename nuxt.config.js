@@ -1,6 +1,10 @@
 export default {
   target: 'static',
-  ssr: true,
+  ssr: false,
+
+  generate: {
+    fallback: true
+  },
 
   head: {
     title: 'System rekrutacji uniwersyteckiej',
@@ -59,5 +63,13 @@ export default {
     treeShake: true
   },
 
-  build: {}
+  build: {
+    extend(config, ctx) {
+      if (ctx.isClient) {
+        config.resolve.alias = {
+          ...config.resolve.alias
+        }
+      }
+    }
+  }
 }
